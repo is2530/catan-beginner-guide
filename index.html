@@ -2287,7 +2287,7 @@ input:checked + .slider:before {
               <div class="piece-info">
                 <strong>마을</strong>
                 <span class="count">플레이어당 5개 받기</span>
-                <span class="score-tag">승점 1점</span>
+                <span class="score-tag">+1점</span>
                 <p>육각형 타일의 꼭짓점에 건설. 인접 지형에서 자원 1장 생산.</p>
               </div>
             </div>
@@ -2299,7 +2299,7 @@ input:checked + .slider:before {
               <div class="piece-info">
                 <strong>도시</strong>
                 <span class="count">플레이어당 4개 받기</span>
-                <span class="score-tag orange">승점 2점</span>
+                <span class="score-tag orange">+2점</span>
                 <p>육각형 타일의 꼭짓점에 건설. 기존 마을을 확장. 인접 지형에서 자원 2장 생산.</p>
               </div>
             </div>
@@ -2516,7 +2516,11 @@ input:checked + .slider:before {
                 <span class="phase-icon">🎲</span>
                 <h3 id="sx-produce">1. 자원 얻기 (주사위 굴리기)</h3>
               </div>
-              <p class="phase-desc">주사위 2개를 굴립니다. 나온 두 주사위 눈의 <strong>합(2~12)</strong>에 해당하는 숫자 칩이 놓인 모든 지형에서 자원이 생산됩니다.</p>
+              <p class="phase-desc">주사위 2개를 굴립니다. 나온 두 주사위 눈의 합에 해당하는 숫자 칩(같은 숫자칩이 2개면 2개 다)이 있는 땅과 인접한 곳에 마을이나 도시를 건설한 사람에게 자원이 생산됩니다.</p>
+              <ul class="phase-desc">
+                <li>마을 1개 인접: 해당 자원카드 1장 획득</li>
+                <li>도시 1개 인접: 해당 자원카드 2장 획득</li>
+              </ul>
               <div class="rule-callout robber-event">
                 <strong>단, 합이 7이 나오면 자원 생산이 없고 도둑 이벤트가 발생!</strong>
                 <ol>
@@ -2525,16 +2529,6 @@ input:checked + .slider:before {
                   <li>도둑이 놓인 땅과 인접한 교차로에 마을이나 도시를 건설한 플레이어에게서 보지 않고 자원 카드 1장을 뺏습니다.</li>
                 </ol>
               </div>
-              
-              <div class="rule-callout">
-                <strong>누가 자원을 받나요?</strong>
-                <p>주사위를 굴린 사람뿐만 아니라, <strong>그 숫자의 땅에 마을이나 도시를 지은 모든 플레이어</strong>가 자원을 받습니다!</p>
-                <ul>
-                  <li style="white-space: nowrap;"><strong>마을 1개</strong> 인접: 해당 자원카드 <strong>1장</strong> 획득</li>
-                  <li style="white-space: nowrap;"><strong>도시 1개</strong> 인접: 해당 자원카드 <strong>2장</strong> 획득</li>
-                </ul>
-              </div>
-
             </div>
           </div>
 
@@ -2592,7 +2586,7 @@ input:checked + .slider:before {
                     <strong>마을</strong>
                     <span class="r-cost">나무 1 + 흙 1 + 밀 1 + 양 1</span>
                   </div>
-                  <p>자신의 도로와 연결된 빈 교차점에 건설. <strong>(승점 1점)</strong><br>
+                  <p>자신의 도로와 연결된 빈 교차점에 건설.<br>
                   ※ <strong>간격 규칙</strong>: 인접 교차점에 어떤 마을/도시도 없어야 함!</p>
                 </div>
 
@@ -2601,8 +2595,7 @@ input:checked + .slider:before {
                     <strong>도시</strong>
                     <span class="r-cost">밀 2 + 철 3</span>
                   </div>
-                  <p><strong>기존에 이미 지어진 마을을 교체(업그레이드)</strong>하여 건설. <strong>(승점 2점)</strong><br>
-                  인접 지형에서 자원을 2배(2장씩) 생산합니다.</p>
+                  <p><strong>기존에 이미 지어진 마을을 교체(업그레이드)</strong>하여 건설.</p>
                 </div>
 
                 <div class="recipe-card">
