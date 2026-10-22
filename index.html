@@ -2876,11 +2876,13 @@ function goToStep(step) {
   currentStep = step;
   updateStepUI();
   
-  // Scroll to top of content
+  // Reset both scroll containers because mobile browsers scroll the document,
+  // while the desktop layout scrolls the content area itself.
   const contentArea = document.getElementById('contentArea');
   if (contentArea) {
     contentArea.scrollTop = 0;
   }
+  window.scrollTo(0, 0);
 }
 
 function navigateStep(delta) {
