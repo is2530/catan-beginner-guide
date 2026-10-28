@@ -2911,8 +2911,14 @@ function openGuideStep(event, step, targetId = null) {
   const container = document.querySelector('.mobile-container');
   const intro = document.getElementById('guideIntro');
   container?.classList.remove('intro-active');
-  intro?.setAttribute('aria-hidden', 'true');
   goToStep(step);
+  const nextTab = document.querySelector(`.nav-tab[data-step="${step}"]`);
+  if (nextTab) {
+    nextTab.focus();
+  } else {
+    event.currentTarget.blur();
+  }
+  intro?.setAttribute('aria-hidden', 'true');
 
   if (targetId) {
     requestAnimationFrame(() => {
